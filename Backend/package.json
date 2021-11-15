@@ -4,8 +4,13 @@
   "description": "Api RESTful Aplicacion Web de Ventas",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "heroku-postbuild": "cd frontend && npm install && npm run build",
+    "build": "cd frontend && npm run build",
+    "install-client": "cd frontend && npm install",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "cd frontend && npm start",
+    "dev": "concurrently -n 'index,frontend' -c 'red,green'  \"nodemon index.js\" \"npm run frontend\""
   },
   "author": "Edwin Bermudez",
   "license": "MIT",

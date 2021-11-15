@@ -32,5 +32,10 @@ app.use('/api', user_routes);
 app.use('/api', venta_routes);
 app.use('/api', cliente_routes);
 
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('frontend/build'));
+}
+
 /* Exportar modulo (fichero actual) */
 module.exports = app;

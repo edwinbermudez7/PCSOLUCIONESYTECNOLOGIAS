@@ -26,7 +26,7 @@ class ProductForm extends Component {
     componentWillMount() {
         this.validator = new SimpleReactValidator({
             messages: {
-                required: 'Este Campo es Requerido'
+                required: 'Este Campo es Requerido --'
               
               
             }
